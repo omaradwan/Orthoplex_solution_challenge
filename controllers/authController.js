@@ -46,7 +46,7 @@ module.exports.register = asyncHandler(async (req, res,next) => {
     codeData = codeData.rows[0];
 
 
-    // await helper.sendConfirmationEmail(email, code);
+    await helper.sendConfirmationEmail(email, code);
 
     return res.status(201).json({
         message: 'User created successfully',

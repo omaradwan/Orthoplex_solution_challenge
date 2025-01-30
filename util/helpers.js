@@ -11,18 +11,16 @@ module.exports.sendConfirmationEmail = asyncHandler(async (email, content) => {
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
         service: "Gmail",
-        host: process.env.HOST,
-        port: process.env.PORT,
         secure: true,
         auth: {
             user: process.env.EMAIL,
-            pass: process.env.PASS
+            pass: process.env.APP_PASSWORD
         },
     });
 
     // Send confirmation email
     const mailOptions = {
-        from: process.env.EMAIL,
+        from: process.env.APP_PASSWORD,
         to: email,
         subject: "Confirm your email",
         text: `Please confirm your email by this code ${content} and it will expire in 1 hour`
