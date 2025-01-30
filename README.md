@@ -44,6 +44,25 @@ The system is designed to ensure that only Admin users can perform sensitive act
 - **pgAdmin**: Web-based database management tool to interact with PostgreSQL.
 - **Docker Compose**: Used to define and run multi-container Docker applications.
 
+ ## API Testing with Postman
+
+To test the API endpoints, I used **Postman**. You can view and import the Postman collection for the API from the following link:
+
+[Postman Collection - API Testing](https://[www.postman.com/collections/<collection_id>](https://web.postman.co/documentation/31765464-3076ddf1-8796-474d-8475-03fc4306e595/publish?workspaceId=873661cf-9c8b-43aa-8951-35aad6068032))
+
+This collection includes all the API endpoints available for this project, along with sample requests and responses.
+
+## Database Design
+![image](https://github.com/user-attachments/assets/c013875b-c637-4490-b065-ad181b91d916)
+
+### Sample Endpoints
+- `GET /users`
+- `POST /users/create`
+
+
+
+
+
 ## Setup
 
 ### 1. Clone the Repository
