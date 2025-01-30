@@ -48,8 +48,7 @@ The system is designed to ensure that only Admin users can perform sensitive act
 
 To test the API endpoints, I used **Postman**. You can view and import the Postman collection for the API from the following link:
 
-[Postman Collection - API Testing](https://[www.postman.com/collections/<collection_id>](https://web.postman.co/documentation/31765464-3076ddf1-8796-474d-8475-03fc4306e595/publish?workspaceId=873661cf-9c8b-43aa-8951-35aad6068032))
-
+[Postman Collection - API Testing](https://web.postman.co/documentation/31765464-3076ddf1-8796-474d-8475-03fc4306e595/publish?workspaceId=873661cf-9c8b-43aa-8951-35aad6068032)
 This collection includes all the API endpoints available for this project, along with sample requests and responses.
 
 ## Database Design
