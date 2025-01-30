@@ -9,7 +9,6 @@ This project is a user management system built using PostgreSQL with Docker. The
 - [Setup](#setup)
 - [Running the Application](#running-the-application)
 - [Database Management](#database-management)
-- [Keycloak Integration](#keycloak-integration)
 
 ## Overview
 
