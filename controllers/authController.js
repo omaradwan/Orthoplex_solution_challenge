@@ -52,12 +52,11 @@ module.exports.register = asyncHandler(async (req, res,next) => {
         message: 'User created successfully',
         user: userData
     })
-    
 })
 
 module.exports.login = asyncHandler(async (req, res,next) => {
     const { email, password } = req.body
-
+    // console.log(email)
     let user = `
       SELECT * FROM users WHERE email = $1;
     `
@@ -91,7 +90,6 @@ module.exports.login = asyncHandler(async (req, res,next) => {
     const payload={id:foundUser.id,role:foundUser.role}
     const token = await helper.generateToken(payload);
 
-    console.log(foundUser)
     let updatedUser=await updateUserData(foundUser)
    
     
@@ -115,7 +113,7 @@ const updateUserData = async(user) => {
         RETURNING *;
     `;
     let updatedUser = await pool.query(updateUser, [user.id]);
-    console.log(updatedUser.rows[0]);
+    return updatedUser.rows[0];
 }
 
 
@@ -147,7 +145,7 @@ module.exports.verify = asyncHandler(async (req, res,next) => {
         error.message = "code is expired"
         error.isOperational = true
         // in both cases you will need to delete the row
-        deletedUser = deleteCode();
+        deletedUser = deleteCode(email);
         return next(error);
     }
     // now i want to let the verified bool be true 
@@ -159,7 +157,7 @@ module.exports.verify = asyncHandler(async (req, res,next) => {
     let userData = await pool.query(updatedUser, [email]);
     userData = userData.rows[0];
    
-    deletedUser = deleteCode()
+    deletedUser = deleteCode(email)
 
     return res.status(200).json({
         message: 'User verified successfully',
@@ -167,7 +165,7 @@ module.exports.verify = asyncHandler(async (req, res,next) => {
     })
 })
 
-const deleteCode = async (req, res, next) => {
+const deleteCode = async (email) => {
     try {
         let deleteUser = `
         DELETE FROM verifyUser
