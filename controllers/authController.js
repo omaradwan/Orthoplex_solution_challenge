@@ -72,7 +72,7 @@ module.exports.login = asyncHandler(async (req, res,next) => {
     }
     if(foundUser.verified === false){
         let error = new Error();
-        error.status = 400;
+        error.status=  400;
         error.message = "User is not verified"
         error.isOperational=true
         return next(error);
