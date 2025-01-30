@@ -50,4 +50,4 @@ The system is designed to ensure that only Admin users can perform sensitive act
 Clone this repository to your local machine:
 ```bash
 git clone https://github.com/your-username/user-management-app.git
-cd user-management-app
+docker-compose up  for containers
